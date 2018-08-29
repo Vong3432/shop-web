@@ -1,0 +1,220 @@
+body
+{
+	margin: 0;
+	text-align: center;
+	transform-style: preserve-3d;
+	height: 100%;
+	overflow-y: scroll;
+	perspective: 1px;
+	overflow-x: hidden;
+}
+
+html
+{
+	height: 100%;
+	overflow: hidden;
+}
+
+
+.topbar
+{
+	position: sticky;
+	z-index: 99;	
+	width: 100%;
+	transition:0.4s;
+	top: 0;
+}
+
+.topbar a
+{
+	color: silver;
+	float: left;
+	padding: 25px;
+	margin-left: 5px;
+	margin-right: 5px;	
+	font-size: 2vh;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing:2px;
+	font-family: Arial;			
+}
+
+a.active
+{
+	color: white;
+}
+
+.topbar a:hover
+{
+	transition: 1s;
+	color: white;
+}
+
+.icon
+{
+	display: none;
+}
+
+
+
+.hero-container:before
+{
+	
+	content: "";
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	background-image: url(image/heroImg1.jpg);
+	background-size: cover;
+	transform-origin: center center 0;
+	transform: translateZ(-1px) scale(2);
+	z-index: -1;
+	min-height: 100vh;
+}
+
+.hero-container h1
+{
+	margin-top: -50px;
+}
+
+.hero-container
+{	
+	box-sizing: border-box;
+	min-height: 100vh;
+	padding: 30vw 0 5vw;
+	position: relative;
+	transform-style: inherit;
+	width: 100vw;
+}
+
+.hero-text
+{
+	text-align: center;	
+	color: white;
+	font-weight: bold;
+	font-size: 3vh;
+	letter-spacing: 2px;
+}
+
+.hero-text h1
+{
+	font-weight: normal;
+	font-family: 'Abril Fatface', cursive;
+}
+
+
+.hero2-container,.hero2-container:before
+{
+	background:50% 50% / cover;
+}
+
+.hero2-container::before
+{
+	background-image: url(image/heroImg2.jpg);
+	background-size: cover;
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70%;
+	bottom: 0;
+	transform: translateZ(-1px) scale(2);
+	z-index: -1;
+	min-height: 100vh;
+}
+
+
+
+.page-text p
+{
+	color: white;
+	font-size: 3vh;
+	position: relative;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.hero2-container *
+{
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-align: center;
+	margin: 0;
+}
+
+.hero2-container
+{	
+	box-sizing: border-box;
+	min-height: 100vh;
+	position: relative;
+	transform-style: inherit;
+	width: 100vw;
+	padding: 30px;
+
+}
+
+/*For container
+.container
+{
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 500px;
+	position: relative;
+}
+
+.container p
+{
+	font-size: 3vh;
+}
+*/
+
+.page-text
+{
+	margin-top: 20%;
+}
+
+@media screen and (max-width: 600px)
+{
+	body
+	{
+		perspective: none;
+		text-align: center;
+	}
+
+	img
+	{
+		height: 500px;
+		object-fit: cover;
+	}
+	.container
+	{
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.topbar a:not(:first-child){display: none;}
+
+	.hero-container h1
+	{
+		margin-top: 50%;
+	}
+
+	.hero-container::before,.hero2-container::before
+	{
+		transform: none;
+	}
+
+	.hero2-container::before
+	{
+		top: 0;
+	}
+
+	.page-text p
+	{
+		margin-top: 40%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+}
