@@ -194,6 +194,12 @@ a.active
 		margin-right: 5%;
 	}
 	.topbar a:not(:first-child){display: none;}
+	.topbar a
+	{
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
 
 	.hero-container h1
 	{
