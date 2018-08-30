@@ -7,6 +7,7 @@ body
 	overflow-y: scroll;
 	perspective: 1px;
 	overflow-x: hidden;
+	box-sizing: border-box;
 }
 
 html
@@ -115,6 +116,7 @@ a.active
 	background-image: url(image/heroImg2.jpg);
 	background-size: cover;
 	content: "";
+	display: block;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -155,26 +157,173 @@ a.active
 
 }
 
-/*For container
-.container
-{
-	margin-left: 30%;
-	margin-right: 30%;
-	margin-top: 500px;
-	position: relative;
-}
-
-.container p
-{
-	font-size: 3vh;
-}
-*/
-
 .page-text
 {
 	margin-top: 20%;
 }
 
+.container
+{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.row
+{
+	position: relative;
+	color: white;
+	z-index: 1;
+	width: 100%;
+}
+
+.column
+{
+	position: relative;
+	float: left;
+	width: 33.33%;	
+}
+
+.column img
+{
+	filter: grayscale(60%) brightness(40%) blur(3px);
+}
+
+.column img:hover
+{
+	filter: grayscale(0) brightness(100%) blur(0);	
+	transition: 1s;
+	cursor: pointer;
+}
+
+.card-text
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
+	font-size: 23px;
+	font-family: 'Caveat', cursive;
+	letter-spacing: 2px;
+}
+
+.column.left:hover .card-text
+{
+	transition: 3s;
+	display: none;
+}
+
+.column.middle:hover .card-text
+{
+	transition: 3s;
+	display: none;
+}
+
+.column.right:hover .card-text
+{
+	transition: 3s;
+	display: none;
+}
+
+
+.row:after
+{
+	content: "";
+	clear: both;
+}
+
+.hero3-container,.hero3-container:before
+{
+	background:50% 50% / cover;
+}
+
+.hero3-container::before
+{
+	background-image: url(image/heroImg2.jpg);
+	background-size: cover;
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70%;
+	bottom: 0;
+	transform: translateZ(-1px) scale(2);
+	z-index: -1;
+	min-height: 100vh;
+}
+
+.hero3-container *
+{
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-align: center;
+	margin: 0;
+}
+
+.hero3-container
+{	
+	box-sizing: border-box;
+	min-height: 100vh;
+	margin-top: 30%;
+	position: relative;
+	transform-style: inherit;
+	width: 100vw;
+	padding: 30px;
+	z-index: -1;
+}
+
+.page3-text
+{
+	margin-top: 50%;
+	position: relative;
+	color: white;
+}
+
+
+
+/*Laptop*/
+@media screen and (max-width: 1500px)
+{
+	.column
+	{
+		width: 50%;
+		float: left;
+		margin-top: 10px;									
+	}	
+	.container
+	{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+/*Ipad*/
+@media screen and (max-width: 768px)
+{
+	.column
+	{
+		width: 100%;
+		float: left;		
+	}
+	.column img
+	{
+		width: 100%;
+		height: 300px;
+		object-fit: contain;
+		filter: grayscale(80%) brightness(50%) blur(1px);
+	}
+	.hero3-container::before
+	{
+		top: 67%;
+	}
+	.hero3-container
+	{
+		margin-top: -50%;
+	}
+}
+
+/*Mobile*/
 @media screen and (max-width: 600px)
 {
 	body
@@ -190,8 +339,8 @@ a.active
 	}
 	.container
 	{
-		margin-left: 5%;
-		margin-right: 5%;
+		margin-left: 0;
+		margin-right: 0;
 	}
 	.topbar a:not(:first-child){display: none;}
 	.topbar a
@@ -206,14 +355,19 @@ a.active
 		margin-top: 50%;
 	}
 
-	.hero-container::before,.hero2-container::before
+	.hero-container::before,.hero2-container::before,.hero3-container::before
 	{
 		transform: none;
 	}
 
-	.hero2-container::before
+	.hero2-container::before,.hero3-container::before
 	{
 		top: 0;
+	}
+
+	.hero3-container
+	{
+		margin-top: -50%;
 	}
 
 	.page-text p
@@ -221,6 +375,25 @@ a.active
 		margin-top: 40%;
 		margin-left: 5%;
 		margin-right: 5%;
+	}
+
+	.column img
+	{
+		width: 100%;
+		height: 300px;
+		object-fit: contain;
+		filter: grayscale(10%) brightness(80%) blur(1px);
+	}
+
+	.column
+	{
+		margin-top: -70px;
+		margin-bottom: 25px;
+	}
+
+	.card-text p
+	{
+		font-weight: bold;
 	}
 
 }
