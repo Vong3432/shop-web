@@ -67,7 +67,7 @@ a.active
 	left: 0;
 	bottom: 0;
 	top: 0;
-	background-image: url(image/heroImg1.jpg);
+	background-image: url(https://vong3432.github.io/shop-web/image/heroImg1.jpg);
 	background-size: cover;
 	transform-origin: center center 0;
 	transform: translateZ(-1px) scale(2);
@@ -113,7 +113,7 @@ a.active
 
 .hero2-container::before
 {
-	background-image: url(image/heroImg2.jpg);
+	background-image: url(https://vong3432.github.io/shop-web/image/heroImg2.jpg);
 	background-size: cover;
 	content: "";
 	display: block;
@@ -239,7 +239,7 @@ a.active
 
 .hero3-container::before
 {
-	background-image: url(image/heroImg2.jpg);
+	background-image: url(https://vong3432.github.io/shop-web/image/heroImg2.jpg);
 	background-size: cover;
 	content: "";
 	display: block;
