@@ -298,7 +298,12 @@ a.active
 
 /*Laptop*/
 @media screen and (max-width: 1500px)
-{
+{	
+	body
+	{
+		overflow-y: none;
+	}
+	
 	.column
 	{
 		width: 50%;
@@ -320,6 +325,7 @@ a.active
 /*Ipad*/
 @media screen and (max-width: 768px)
 {
+
 	.column
 	{
 		width: 100%;
@@ -332,6 +338,12 @@ a.active
 		object-fit: contain;
 		filter: grayscale(80%) brightness(50%) blur(1px);
 	}
+
+	.hero2-container
+	{
+		min-height: 85vh;
+	}
+
 	.hero3-container::before
 	{
 		top: 55%;
