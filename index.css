@@ -285,7 +285,7 @@ form.example::after {
 
 .hero3-container::before
 {
-	background-image: url(image/image1.jpg);
+	background-image: url(https://vong3432.github.io/shop-web/image/image1.jpg);
 	background-size: cover;
 	content: "";
 	display: block;
