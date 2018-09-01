@@ -1,6 +1,6 @@
 body
 {
-	margin: 0;
+	margin: 0;	
 	text-align: center;
 	transform-style: preserve-3d;
 	height: 100%;
@@ -28,7 +28,7 @@ html
 
 .topbar a
 {
-	color: silver;
+	color: white;
 	float: left;
 	padding: 25px;
 	margin-left: 5px;
@@ -42,7 +42,7 @@ html
 
 a.active
 {
-	color: white;
+	color: gold;
 }
 
 .topbar a:hover
@@ -281,20 +281,54 @@ a.active
 	color: white;
 }
 
-.carousel
+.search-bar
 {
-	position: relative;
-	top: 0%;
-	width: 100%;
+	position: relative;	
+	top: 100%;
+	left: -7.77px;
+	width: 101%;	
 	height: 900px;
-
+	transform: translateZ(-1px) scale(2);
 }
 
-.slide:nth-child(1){background-image: url(image/image1.jpg);height: 100%;background-size: cover;}
-.slide:nth-child(2){background-image: url(image/image2.jpg);height: 100%;}
-.slide:nth-child(3){background-image: url(image/image3.jpg);height: 100%;}
-.slide:nth-child(4){background-image: url(image/image4.jpg);height: 100%;}
+.search-bgimage
+{
+	background-image: url(image/image1.jpg);height: 100%;background-size: cover;
+}
 
+form.example input[type=text]
+{
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-radius: 12px;
+    float: left;
+    width: 100%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    margin-top: 15px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 /*Laptop*/
 @media screen and (max-width: 1500px)
@@ -315,10 +349,13 @@ a.active
 		margin-left: 0;
 		margin-right: 0;
 	}
-	.carousel
+	.search-bar
 	{
-		top: 0;
+		
 		margin-top: 10%;
+		transform: translateZ(-1px) scale(2);
+		width: 100%;
+		left: 0;
 	}
 }
 
@@ -347,12 +384,19 @@ a.active
 	.hero3-container::before
 	{
 		top: 55%;
+		transform: translateZ(-1px) scale(3);
 	}
 	.hero3-container
 	{
 		margin-top: 70%;
 	}	
 
+	.search-bar
+	{
+		top: 60%;
+		margin-top: 0;
+
+	}
 
 }
 
@@ -397,7 +441,7 @@ a.active
 	.hero2-container::before,.hero3-container::before
 	{
 		top: 0;
-	}
+	}	
 
 	.hero3-container
 	{
@@ -431,19 +475,20 @@ a.active
 		font-weight: bold;
 	}
 
-	.carousel
+	.search-bar
 	{
 		top: 20%;
 		margin-top: 60%;
 		height: 500px;
 		object-fit: contain;
+		transform: none;
 	}
 
 }
 
 @media screen and (max-width: 425px)
 {
-	.carousel
+	.search-bar
 	{
 		top: 0%;
 		margin-top: 0%;
